@@ -7,6 +7,7 @@ if [ -d /var/www/fastapi ]; then
 fi
 
 
+
 # Ensure directory exists with correct permissions
 sudo mkdir -p /var/www/fastapi
 sudo chown -R ubuntu:ubuntu /var/www/fastapi
