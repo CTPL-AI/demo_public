@@ -19,15 +19,15 @@ echo "4. Verifying Poetry installation..."
 poetry --version || { echo "Poetry is not installed correctly!"; exit 1; }
 
 echo "5. Checking deployment directory..."
-if [ ! -d "/home/ubuntu/demo_public" ]; then
-  echo "Directory /home/ubuntu/demo_public does not exist!"
+if [ ! -d "/home/ubuntu/ubuntu/demo_public" ]; then
+  echo "Directory /home/ubuntu/ubuntu/demo_public does not exist!"
   echo "Available directories in /home/ubuntu:"
   ls -l /home/ubuntu || { echo "Failed to list directories!"; exit 1; }
   exit 1
 fi
 
 echo "6. Navigating to application directory..."
-cd /home/ubuntu/demo_public || { echo "Failed to navigate to /home/ubuntu/demo_public!"; exit 1; }
+cd /home/ubuntu/ubuntu/demo_public || { echo "Failed to navigate to /home/ubuntu/ubuntu/demo_public!"; exit 1; }
 
 echo "7. Installing dependencies using Poetry..."
 poetry install --no-dev || { echo "Failed to install dependencies with Poetry!"; exit 1; }
