@@ -2,13 +2,13 @@
 
 set -e
 
-PORT =8010
-echo "Stopping FastAPI application on port $PORT..."
+PORT_NO =8010
+echo "Stopping FastAPI application on PORT_NO $PORT_NO..."
 
-#Find the process using the port and kill it
+#Find the process using the PORT_NO and kill it
 #custom check
-PID= $(lsof -ti:$PORT) # Get the Process Id (PID) using the port
+PID= $(lsof -ti:$PORT_NO) # Get the Process Id (PID) using the PORT_NO
 if [-n "PID"]; then
     kill -9 $PID
-    echo "Application running on port $PORT, with pid $PID has been stopped."
+    echo "Application running on PORT_NO $PORT_NO, with pid $PID has been stopped."
 else
