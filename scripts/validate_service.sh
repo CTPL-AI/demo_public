@@ -10,10 +10,10 @@ else
     echo "Application failed to start properly"
     echo "HTTP response code: $http_response"
     
-    # Print logs for debugging
-    echo "=== Supervisor Logs ==="
-    sudo tail -n 50 /var/log/supervisor/fastapi.err.log
-    sudo tail -n 50 /var/log/supervisor/fastapi.out.log
+    # # Print logs for debugging
+    # echo "=== Supervisor Logs ==="
+    # sudo tail -n 50 /var/log/supervisor/fastapi.err.log
+    # sudo tail -n 50 /var/log/supervisor/fastapi.out.log
     
     # echo "=== Nginx Error Logs ==="
     # sudo tail -n 50 /var/log/nginx/error.log

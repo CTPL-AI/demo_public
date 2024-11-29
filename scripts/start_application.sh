@@ -1,12 +1,3 @@
-sudo supervisorctl reread
-sudo supervisorctl update
-
-# Restart FastAPI application
-sudo supervisorctl restart fastapi
-
-# # Restart nginx
-# sudo systemctl restart nginx
-
-# Check if services are running
-sudo supervisorctl status fastapi
-# sudo systemctl status nginx
+cd /fastapi
+source venv/bin/activate
+nohup uvicorn main:app --port 8010 --host 0.0.0.0 > /dev/null 2>$1 &
