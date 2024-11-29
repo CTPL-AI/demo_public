@@ -5,7 +5,7 @@ files:
   destination: /home/ubuntu/demo_public
 hooks:
   BeforeInstall:
-    - location: scripts/install_dependecies.sh
+    - location: scripts/install_dependencies.sh
       timout: 300
       runas: root
   ApplicationStart:
