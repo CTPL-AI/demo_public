@@ -1,5 +1,5 @@
-if [ -d /fastapi ]; then
-    cd /fastapi
+if [ -d /var/www/fastapi ]; then
+    cd /var/www/fastapi
     if [ -d "venv" ]; then
         rm -rf venv
     fi
@@ -8,5 +8,5 @@ fi
 
 
 # Ensure directory exists with correct permissions
-sudo mkdir -p /fastapi
-sudo chown -R ubuntu:ubuntu /fastapi
+sudo mkdir -p /var/www/fastapi
+sudo chown -R ubuntu:ubuntu /var/www/fastapi
