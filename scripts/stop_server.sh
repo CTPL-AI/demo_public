@@ -12,4 +12,3 @@ if [-n "PID"]; then
     kill -9 $PID
     echo "Application running on port $PORT, with pid $PID has been stopped."
 else
-    echo "No process found running on port $PORT"
