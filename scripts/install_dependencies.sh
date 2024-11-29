@@ -1,24 +1,35 @@
 #!/bin/bash
 
-set -e
+set -e  # Exit on any error
 
-echo "Installing dependencies..."
+echo "### INSTALL DEPENDENCIES SCRIPT STARTED ###"
+
+echo "1. Installing required packages..."
 sudo apt update
-sudo apt install -y python3-pip python3-venv curl
+sudo apt install -y python3-pip python3-venv curl || { echo "Failed to install packages!"; exit 1; }
 
-# Install poetry
-curl -sSL https://install.python-poetry.org | python3 -
+echo "2. Installing Poetry..."
+curl -sSL https://install.python-poetry.org | python3 - || { echo "Failed to install Poetry!"; exit 1; }
 
-# Add Poetry to PATH
+echo "3. Adding Poetry to PATH..."
 export PATH="$HOME/.local/bin:$PATH"
+echo "PATH is set to: $PATH"
 
-# Verify Poetry installation
-poetry --version || { echo "Poetry installation failed!"; exit 1; }
+echo "4. Verifying Poetry installation..."
+poetry --version || { echo "Poetry is not installed correctly!"; exit 1; }
 
-# Navigate to the application directory
-echo "Navigating to application directory..."
-cd /home/ubuntu/demo_public || { echo "Directory not found!"; exit 1; }
+echo "5. Checking deployment directory..."
+if [ ! -d "/home/ubuntu/demo_public" ]; then
+  echo "Directory /home/ubuntu/demo_public does not exist!"
+  echo "Available directories in /home/ubuntu:"
+  ls -l /home/ubuntu || { echo "Failed to list directories!"; exit 1; }
+  exit 1
+fi
 
-# Install dependencies using Poetry
-echo "Installing dependencies with Poetry..."
-poetry install --no-dev  # Include --no-dev to install only production dependencies
+echo "6. Navigating to application directory..."
+cd /home/ubuntu/demo_public || { echo "Failed to navigate to /home/ubuntu/demo_public!"; exit 1; }
+
+echo "7. Installing dependencies using Poetry..."
+poetry install --no-dev || { echo "Failed to install dependencies with Poetry!"; exit 1; }
+
+echo "### INSTALL DEPENDENCIES SCRIPT COMPLETED ###"
