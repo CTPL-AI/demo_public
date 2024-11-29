@@ -1,18 +1,26 @@
 version: 0.0
 os: linux
 files:
-  - source: .
-    destination: /demo_public
+  - source: /
+    destination: /var/www/fastapi
 hooks:
   BeforeInstall:
-    - location: scripts/install_dependencies.sh
+    - location: scripts/before_install.sh
       timeout: 300
-      runas: root
+      runas: ubuntu
+  AfterInstall:
+    - location: scripts/after_install.sh
+      timeout: 300
+      runas: ubuntu
   ApplicationStart:
-    - location: scripts/start_server.sh
+    - location: scripts/start_application.sh
       timeout: 300
-      runas: root
+      runas: ubuntu
+  ValidateService:
+    - location: scripts/validate_service.sh
+      timeout: 300
+      runas: ubuntu
   ApplicationStop:
     - location: scripts/stop_server.sh
       timeout: 300
-      runas: root
+      runas: ubuntu
