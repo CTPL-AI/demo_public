@@ -18,6 +18,9 @@ echo "PATH is set to: $PATH"
 echo "4. Verifying Poetry installation..."
 poetry --version || { echo "Poetry is not installed correctly!"; exit 1; }
 
+dirss=$(ls -la)
+echo "$dirss"
+
 echo "5. Checking deployment directory..."
 if [ ! -d "/demo_public" ]; then
   echo "Directory /demo_public does not exist!"
