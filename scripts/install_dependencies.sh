@@ -22,7 +22,7 @@ echo "5. Checking deployment directory..."
 if [ ! -d "/home/ubuntu/ubuntu/demo_public" ]; then
   echo "Directory /home/ubuntu/ubuntu/demo_public does not exist!"
   echo "Available directories in /home/ubuntu:"
-  ls -l /home/ubuntu || { echo "Failed to list directories!"; exit 1; }
+  ls -l /home/ubuntu/ubuntu || { echo "Failed to list directories!"; exit 1; }
   exit 1
 fi
 
