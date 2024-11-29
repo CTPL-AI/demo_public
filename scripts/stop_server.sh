@@ -2,7 +2,7 @@
 
 set -e
 
-PORT=8010
+PORT =8010
 echo "Stopping FastAPI application on port $PORT..."
 
 #Find the process using the port and kill it
