@@ -10,7 +10,7 @@ sudo apt install -y python3-pip python3-venv curl
 curl -sSL https://install.python-poetry.org | python3 -
 
 # Add Poetry to PATH
-export PATH="$HOME/.local.bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # Verify Poetry installation
 poetry --version || { echo "Poetry installation failed!"; exit 1; }
