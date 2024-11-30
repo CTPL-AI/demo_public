@@ -1,6 +1,6 @@
 [
     {
-        "name": "demo-public-ctpl-test",
+        "name": "demo-public-ctpl-test-container",
         "imageUri": "886436922678.dkr.ecr.us-east-1.amazonaws.com/demo-public-ctpl-test:latest"
     }
 ]
