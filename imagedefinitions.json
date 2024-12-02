@@ -1,0 +1,6 @@
+[
+    {
+        "name": "demo-public-container",
+        "imageUri": "789827774995.dkr.ecr.us-east-1.amazonaws.com/zeeshan/demo:latest"
+    }
+]
