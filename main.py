@@ -5,7 +5,7 @@ app = FastAPI()
 
 @app.get("/")
 async def root():
-    return {"message": "Hello, from FastAPI application approve!"}
+    return {"message": "Hello, from FastAPI application approve 2!"}
 
 
 @app.get("/health")
